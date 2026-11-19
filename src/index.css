@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-sans: "DM Sans", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+@layer base {
+  html,
+  body {
+    font-family: var(--font-sans);
+    background-color: #060914;
+    color: #f1f5f9;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-mono-tabular {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Subtle cosmic starlight drift */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  50% {
+    transform: translateY(-8px) translateX(4px);
+  }
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+.animate-twinkle {
+  animation: twinkle 4s ease-in-out infinite;
+}
+
+/* Custom sleek scrollbars for modals and phone content */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.4);
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.25);
+  border-radius: 9999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(251, 191, 36, 0.45);
+}
+
+/* Print stylesheet for Digital Brochure PDF export */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 10mm;
+  }
+
+  html,
+  body,
+  #root {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only-container {
+    position: static !important;
+    inset: auto !important;
+    display: block !important;
+    background: #ffffff !important;
+    color: #0f172a !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    max-height: none !important;
+    height: auto !important;
+  }
+
+  .print-card {
+    background: #f8fafc !important;
+    border: 1px solid #cbd5e1 !important;
+    color: #0f172a !important;
+    break-inside: avoid;
+  }
+
+  .print-text-dark {
+    color: #0f172a !important;
+  }
+
+  .print-text-muted {
+    color: #475569 !important;
+  }
+}

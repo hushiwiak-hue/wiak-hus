@@ -1,0 +1,6 @@
+{
+  "name": "SADEEM · SAIF 2026 Investor Presentation",
+  "description": "Interactive 16:9 animated presentation for SADEEM — a cyber-secure educational mobile app with Safe AI Arabic Nahw tutoring, on-device talent discovery, and PIN-protected parental controls.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
